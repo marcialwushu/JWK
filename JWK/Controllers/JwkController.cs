@@ -36,6 +36,7 @@ namespace JWK.Controllers
         //X509Certificate2 certificate;
         //private JsonObject headers;
         private readonly IdentityServerOptions options;
+        private readonly string JWK_URL;
 
 
         // GET api/values
@@ -89,7 +90,7 @@ namespace JWK.Controllers
 
             // Set headers for paging
             response.Headers.Add("alg", "RSA");            
-            response.Headers.Add("jku", "https://qrcode-h.fitbank.com.br/jwks");
+            response.Headers.Add("jku", JWK_URL);
             response.Headers.Add("kid", jsonJWK.Kid);
 
             return response;
