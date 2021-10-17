@@ -63,7 +63,7 @@ namespace JWK.Controllers
             };
             JsonWebKeySet jsonWebKeySet = new JsonWebKeySet();
             jsonWebKeySet.Keys.Add(jsonWebKey);
-            _ = JsonConvert.SerializeObject(jsonWebKeySet);
+            var json = JsonConvert.SerializeObject(jsonWebKeySet);
 
             JsonJWK jsonJWK = new JsonJWK()
             {
